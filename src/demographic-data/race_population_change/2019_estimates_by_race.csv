@@ -1,0 +1,31 @@
+table with row headers in column A and column headers in rows 3 through 6  (leading dots indicate sub-parts). (leading dots indicate sub-parts),,,,,,,,,,
+"Estimates of the Components of Resident Population Change by Race and Hispanic Origin for the United States: April 1, 2010 to July 1, 2019",,,,,,,,,,
+"Race and
+Hispanic Origin",Cumulative Estimates of the Components of Population Change,,,,,Annual Estimates of the Components of Population Change,,,,
+,"April 1, 2010 to July 1, 2019",,,,,"July 1, 2018 to July 1, 2019",,,,
+,Total Population Change,Natural Increase,Vital Events,,Net International Migration1,Total Population Change,Natural Increase,Vital Events,,Net International Migration1
+,,,Births,Deaths,,,,Births,Deaths,
+TOTAL POPULATION,"19,481,418","11,621,558","36,275,313","24,653,755","7,859,860","1,552,022","956,674","3,791,712","2,835,038","595,348"
+.One Race,"17,323,392","9,671,973","34,112,946","24,440,973","7,651,419","1,330,415","751,074","3,559,752","2,808,678","579,341"
+..White,"8,576,759","5,455,420","26,221,461","20,766,041","3,121,339","561,165","364,410","2,728,712","2,364,302","196,755"
+..Black or African American,"3,820,636","2,593,699","5,505,689","2,911,990","1,226,937","343,062","229,734","575,516","345,782","113,328"
+..American Indian and Alaska Native,"448,485","408,289","589,077","180,788","40,196","42,281","39,388","61,301","21,913","2,893"
+..Asian,"4,345,219","1,128,375","1,693,561","565,186","3,216,844","370,757","108,697","183,132","74,435","262,060"
+..Native Hawaiian and Other Pacific Islander,"132,293","86,190","103,158","16,968","46,103","13,150","8,845","11,091","2,246","4,305"
+.Two or More Races,"2,158,026","1,949,585","2,162,367","212,782","208,441","221,607","205,600","231,960","26,360","16,007"
+,,,,,,,,,,
+Race alone or in combination:2,,,,,,,,,,
+..White,"10,570,492","7,273,244","28,213,058","20,939,814","3,297,248","766,631","556,660","2,942,560","2,385,900","209,971"
+..Black or African American,"5,004,079","3,690,387","6,673,661","2,983,274","1,313,692","466,929","347,301","701,883","354,582","119,628"
+..American Indian and Alaska Native,"806,930","740,048","1,027,460","287,412","66,882","76,730","72,267","107,263","34,996","4,463"
+..Asian,"5,185,297","1,848,305","2,482,663","634,358","3,336,992","456,391","184,400","267,587","83,187","271,991"
+..Native Hawaiian and Other Pacific Islander,"279,895","215,626","256,638","41,012","64,269","27,984","22,108","27,284","5,176","5,876"
+HISPANIC,"10,093,626","7,723,554","9,341,852","1,618,298","2,370,072","932,368","778,602","984,203","205,601","153,766"
+"WHITE ALONE, NOT HISPANIC","-16,612","-1,073,206","18,219,575","19,292,781","1,056,594","-225,380","-289,849","1,887,772","2,177,621","64,469"
+"1 Net international migration for the United States includes the international migration of both native and foreign-born populations. Specifically, it includes: (a) the net international migration of the foreign born, (b) the net migration between the United States and Puerto Rico, (c) the net migration of natives to and from the United States, and (d) the net movement of the Armed Forces population between the United States and overseas. Net international migration for Puerto Rico includes the migration of native and foreign-born populations between the United States and Puerto Rico. ",,,,,,,,,,
+2 'In combination' means in combination with one or more other races. The sum of the five race groups adds to more than the total population because individuals may report more than one race.,,,,,,,,,,
+"Note: The estimates are based on the 2010 Census and reflect changes to the April 1, 2010 population due to the Count Question Resolution program. Hispanic origin is considered an ethnicity, not a race. Hispanics may be of any race. Responses of 'Some Other Race' from the 2010 Census are modified. This results in differences between the population for specific race categories shown for the 2010 Census population in this table versus those in the original 2010 Census data. For more information, see https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/modified-race-summary-file-method/mrsf2010.pdf. For population estimates methodology statements, see http://www.census.gov/programs-surveys/popest/technical-documentation/methodology.html. ",,,,,,,,,,
+Suggested Citation:,,,,,,,,,,
+"Estimates of the Components of Resident Population Change by Race and Hispanic Origin for the United States: April 1, 2010 to July 1, 2019 (NC-EST2019-COMPN)",,,,,,,,,,
+"Source: U.S. Census Bureau, Population Division",,,,,,,,,,
+Release Date: June 2020,,,,,,,,,,
