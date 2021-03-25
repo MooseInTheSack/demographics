@@ -40,7 +40,6 @@ export const DecadeLineChart = (props) => {
 
     useEffect( () => {
         var arrayOfRacialData = []
-        console.log('in UseEffect 1')
         arrayOfRacialData.push(getAnnualPopulation("NonHispanicWhite"))
         arrayOfRacialData.push(getAnnualPopulation("Black"))
         arrayOfRacialData.push(getAnnualPopulation("Asian"))
@@ -70,7 +69,6 @@ export const DecadeLineChart = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log('in UseEffect 2')
         const ctx = document.getElementById(props.type);
 
         setMyLineChart(new Chart(ctx, {
