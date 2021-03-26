@@ -1,10 +1,7 @@
 .App {
   text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 50px;
-  margin-left: 100px;
-  margin-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .App-logo {
@@ -43,7 +40,9 @@
 }
 
 .chartDiv {
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-top: 100px;
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

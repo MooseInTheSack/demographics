@@ -83,6 +83,7 @@ export const DecadeLineChart = (props) => {
                     borderColor: chartColors[0],
                     borderWidth: 1,
                     fill: false,
+                    borderWidth: 3,
                     
                 },
                 {
@@ -92,6 +93,7 @@ export const DecadeLineChart = (props) => {
                     borderColor: chartColors[2],
                     borderWidth: 1,
                     fill: false,
+                    borderWidth: 3,
                     
                 },
                 {
@@ -101,6 +103,7 @@ export const DecadeLineChart = (props) => {
                     borderColor: chartColors[4],
                     borderWidth: 1,
                     fill: false,
+                    borderWidth: 3,
                     
                 },
                 {
@@ -110,6 +113,7 @@ export const DecadeLineChart = (props) => {
                     borderColor: chartColors[8],
                     borderWidth: 1,
                     fill: false,
+                    borderWidth: 3,
                     
                 },
                 {
@@ -119,6 +123,7 @@ export const DecadeLineChart = (props) => {
                     borderColor: chartColors[10],
                     borderWidth: 1,
                     fill: false,
+                    borderWidth: 3,
                     
                 }
                 ]
