@@ -12,6 +12,7 @@ import './SimpleTabs.css';
 import { DecadeLineChart } from '../DecadeLineChart/DecadeLineChart'
 import { IncomeBracketChart } from '../IncomeBracketChart/IncomeBracketChart'
 import { BirthDataChart } from '../BirthDataChart/BirthDataChart'
+import { PopulationPyramidChart } from '../PopulationPyramidChart/PopulationPyramidChart'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -65,16 +66,17 @@ export const SimpleTabs = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Fertility" {...a11yProps(0)} />
+          <Tab label="Pop Pyramid" {...a11yProps(0)} />
           <Tab label="Population" {...a11yProps(1)} />
           <Tab label="Income" {...a11yProps(2)} />
+          <Tab label="Fertility" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      <div className="chartDiv">
-        <h3>Number of Births Each Year By Race, 1960 to 2019</h3>  
-        <BirthDataChart type="birthRate"/>
-      </div>
+        <div className="chartDiv">
+          <h3>Non-Hispanic White Population Pyramid 2020, Ages 0-29</h3>  
+          <PopulationPyramidChart type="popPyramid"/>
+        </div>
 
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -105,6 +107,13 @@ export const SimpleTabs = () => {
               <IncomeBracketChart type="percentIncome" />
           </div>
           <br />
+        </div>
+
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <div className="chartDiv">
+          <h3>Number of Births Each Year By Race, 1960 to 2019</h3>  
+          <BirthDataChart type="birthRate"/>
         </div>
 
       </TabPanel>
