@@ -3,39 +3,17 @@ import logo from './logo.svg';
 import Chart from 'chart.js';
 import './App.css';
 
-import { RaceData2019 } from './components/2019RaceData/2019RaceData'
-import { DecadeLineChart } from './components/DecadeLineChart/DecadeLineChart'
-import { IncomeBracketChart } from './components/IncomeBracketChart/IncomeBracketChart'
+import { SimpleTabs } from './components/SimpleTabs/SimpleTabs'
+
 
 function App() {
+
+  const [chosenCategory, setChosenCategory] = useState('income')
   
   return (
     <div className="App">
-      
-      <h1>United States Demographics</h1>
-
-      <div className="chartDiv">
-        <h2>Total Number of Households in each Income Bracket by Race, 2019</h2>
-          <IncomeBracketChart type="totalIncome" />
-      </div>
-      <br />
-
-      <div className="chartDiv">
-        <h2>Each Race as a Percent of the Total Respective Income Bracket, 2019</h2>
-          <IncomeBracketChart type="percentIncome" />
-      </div>
-      <br />
-
-      <div className="chartDiv">
-        <h2>Population by Race 2010-2019</h2>
-          <DecadeLineChart type="total" />
-      </div>
-      <br />
-      
-      <div className="chartDiv">
-        <h2>Population as a Pecent of Total Inhabitants by Race</h2>
-          <DecadeLineChart type="percent" />
-      </div>
+      <h1>United States Racial Demographics</h1>
+        <SimpleTabs />
     </div>
   )
   

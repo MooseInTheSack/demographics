@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Chart from 'chart.js';
-import { get2019RaceDataDict, getDirectRaceDict, raceCodes } from '../../utility/get2019RaceData'
+import { getDirectRaceDict, raceCodes } from '../../utility/get2019RaceData'
 import { colorCombos } from '../../utility/colorCombos'
 
 export const RaceData2019 = () => {
@@ -9,31 +9,7 @@ export const RaceData2019 = () => {
     const [myPieChart, setMyPieChart] = useState(null)
     const [ chartColors ] = useState(colorCombos())
 
-    useEffect(() => {
-    console.log('1st useEffect')
-    const ctx = document.getElementById("myChart");
-    /*
-    setMyPieChart(new Chart(ctx, {
-        type: "pie",
-        data: {
-        labels: colorCombos,
-        datasets: [
-            {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: colorCombos,
-            borderColor: colorCombos,
-            borderWidth: 1
-            }
-        ]
-        }
-    }));
-    */
-    }, [])
-
-
     useEffect( () => {
-    console.log('2nd useEffect')
     const raceDataByState = getDirectRaceDict()
     
     if(raceDataByState) {
@@ -44,7 +20,6 @@ export const RaceData2019 = () => {
     }, []);
 
     useEffect(() => {
-    console.log('3rd useEffect')
     const ctx = document.getElementById("myChart");
 
     const raceNames = raceCodes()

@@ -1,7 +1,6 @@
-export const yeet = () => {
+export const getAllBirthData = () => {
     //got from https://data.cdc.gov/resource/89yk-m38d.json
-    return `
-    [
+    return [
         {
             "year": "1960",
             "race": "All races",
@@ -3247,5 +3246,4 @@ export const yeet = () => {
             "fertility_rate": "72.9"
         }
     ]
-    `
 }

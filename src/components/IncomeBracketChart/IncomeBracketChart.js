@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 import { getIncomeBracketNonHispanicWhites } from "../../utility/usa_2019_income_bracket_non_hispanic_white.js"
-import { getIncomeBracketAllWhites } from "../../utility/usa_2019_income_bracket_all_white.js"
+//import { getIncomeBracketAllWhites } from "../../utility/usa_2019_income_bracket_all_white.js"
 import { getIncomeBracketForBlackHouseholds } from "../../utility/usa_2019_income_bracket_black"
 import { getIncomeBracketForAsians } from "../../utility/usa_2019_income_bracket_asian"
 import { getIncomeBracketHispanic } from "../../utility/usa_2019_income_bracket_hispanic"
@@ -64,7 +64,7 @@ const createLabelsArray = (incomeBracketArray) => {
 export const IncomeBracketChart = (props) => {
     const [ colorArray ] = useState(colorCombos())
     const [NHWData] = useState(getIncomeBracketNonHispanicWhites())
-    const [AllWhitesData] = useState(getIncomeBracketAllWhites())
+    //const [AllWhitesData] = useState(getIncomeBracketAllWhites())
     const [blackData] = useState(getIncomeBracketForBlackHouseholds())
     const [asianData] = useState(getIncomeBracketForAsians())
     const [hispanicData] = useState(getIncomeBracketHispanic())
