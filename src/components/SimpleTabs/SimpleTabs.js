@@ -11,6 +11,7 @@ import './SimpleTabs.css';
 
 import { DecadeLineChart } from '../DecadeLineChart/DecadeLineChart'
 import { IncomeBracketChart } from '../IncomeBracketChart/IncomeBracketChart'
+import { PovertyBracketChart } from '../PovertyBracketChart/PovertyBracketChart'
 import { BirthDataChart } from '../BirthDataChart/BirthDataChart'
 import { PopulationPyramidChart } from '../PopulationPyramidChart/PopulationPyramidChart'
 
@@ -69,7 +70,8 @@ export const SimpleTabs = () => {
           <Tab label="Pop Pyramid" {...a11yProps(0)} />
           <Tab label="Population" {...a11yProps(1)} />
           <Tab label="Income" {...a11yProps(2)} />
-          <Tab label="Fertility" {...a11yProps(3)} />
+          <Tab label="Poverty" {...a11yProps(3)} />
+          <Tab label="Fertility" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -111,6 +113,13 @@ export const SimpleTabs = () => {
 
       </TabPanel>
       <TabPanel value={value} index={3}>
+        <div className="chartDiv">
+          <h3>Total Number of Individuals in Poverty by Age Range, 2020</h3>  
+          <PovertyBracketChart type="povertyData"/>
+        </div>
+
+      </TabPanel>
+      <TabPanel value={value} index={4}>
         <div className="chartDiv">
           <h3>Number of Births Each Year By Race, 1960 to 2019</h3>  
           <BirthDataChart type="birthRate"/>
