@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 
-import { getAllRacesPoverty } from '../../demographic-data/income/poverty/all_races_poverty'
 import { getNHWPoverty } from '../../demographic-data/income/poverty/nhw_poverty'
 import { getAllHispanicPoverty } from '../../demographic-data/income/poverty/all_hispanic_poverty'
 import { getBlackOnlyPoverty } from '../../demographic-data/income/poverty/black_only_poverty'
@@ -44,38 +44,33 @@ const createLabelsArray = (incomeBracketArray) => {
 }
 
 export const PovertyBracketChart = (props) => {
-    const [ colorArray ] = useState(colorCombos())
-    const [NHWData] = useState(getNHWPoverty())
-    //const [AllWhitesData] = useState(getIncomeBracketAllWhites())
-    const [blackData] = useState(getBlackOnlyPoverty())
-    const [asianData] = useState(getAsianOnlyPoverty())
-    const [hispanicData] = useState(getAllHispanicPoverty())
-    const [racialPercentageData, setRacialPercentageData] = useState([])
-    const [myLineChart, setMyLineChart] = useState(null)
+    const [colorArray] = useState(colorCombos())
+    const [myLineChart, setMyLineChart] = useState()
 
     useEffect(() => {
         const ctx = document.getElementById(props.type);
         var datasets = []
         //if total:
         if(props.type === "povertyData") {
-
             datasets = [
-                createDataset(NHWData, "Non-Hispanic White Households", colorArray[0]),
+                createDataset(getNHWPoverty(), "Non-Hispanic White Households", colorArray[0]),
                 //createDataset(AllWhitesData, "All White Households", colorArray[3]),
-                createDataset(hispanicData, "Hispanic Households", colorArray[3]),
-                createDataset(blackData, "Black Households", colorArray[9]),
-                createDataset(asianData, "Asian Households", colorArray[5]),
+                createDataset(getAllHispanicPoverty(), "Hispanic Households", colorArray[3]),
+                createDataset(getBlackOnlyPoverty(), "Black Households", colorArray[9]),
+                createDataset(getAsianOnlyPoverty(), "Asian Households", colorArray[5]),
             ]
         }
+
+        if (typeof myLineChart !== "undefined" && typeof myLineChart !== undefined) myLineChart.destroy();
 
         setMyLineChart(new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: createLabelsArray(NHWData),
+                labels: createLabelsArray(getNHWPoverty()),
                 datasets: datasets
             },
         }))
-    }, [NHWData])
+    }, [colorArray, myLineChart])
     
     return (
         <div>

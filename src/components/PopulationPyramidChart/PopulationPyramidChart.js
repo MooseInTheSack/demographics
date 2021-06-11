@@ -1,10 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
-//import { getWhiteAndNHWhiteData } from '../../utility/getPopulationPyramidData'
 import { getWhiteAsianAndOtherData } from '../../utility/getPopulationPyramidData'
-import { SimpleSelect } from '../SimpleSelect/SimpleSelect';
-import { MenuItem } from '@material-ui/core';
 
 const categoriesToCount = [
     "Under 5 years", 
@@ -23,6 +21,7 @@ const categoriesToCount = [
 ]
 
 //for one specific file: nhw and hispanics, for ages 0-29 only
+/*
 const convertDemographicDataToChartFormat = (arr, raceName, genderName) => {
     if(raceName === "NHW") {
         return arr.filter((entry) => entry.Sex === genderName).map((matchedEntry) => parseInt(matchedEntry["Non-Hispanic Middle"].replace(",", "")))
@@ -42,6 +41,7 @@ const convertDemographicDataToChartFormat = (arr, raceName, genderName) => {
         return []
     }
 }
+*/
 
 const convertDemoToChartFormat = (arr, raceName, genderName) => {
     
@@ -125,6 +125,7 @@ const populationPyramidOptions = {
 
 }
 
+/*
 const createDataset = (incomeBracketArray, label, barColor) => {
     var dataArray = []
     var labelArray = []
@@ -143,6 +144,7 @@ const createDataset = (incomeBracketArray, label, barColor) => {
         fill: true,
     }
 }
+*/
 
 export const PopulationPyramidChart = (props) => {
 
@@ -167,9 +169,6 @@ export const PopulationPyramidChart = (props) => {
             "Asian": convertDemoToChartFormat(racialData, "Asian", "Female"),
             "Other": convertDemoToChartFormat(racialData, "Other", "Female"),
         }
-
-        console.log('ducky racialData: ', racialData)
-        console.log('ducky maleData: ', maleData)
 
         datasets = [
             {
@@ -216,7 +215,7 @@ export const PopulationPyramidChart = (props) => {
         if(racialData) {
             const ctx = document.getElementById(props.type);
 
-            if (typeof myLineChart !== "undefined") myLineChart.destroy();
+            if (typeof myLineChart !== "undefined" && typeof myLineChart !== undefined) myLineChart.destroy();
 
             const yeet = new Chart(ctx, {
                 type: 'horizontalBar',
@@ -229,17 +228,15 @@ export const PopulationPyramidChart = (props) => {
 
             setMyLineChart(yeet)
         } else {
-            console.error('ducky problem')
+            console.error('Error reading data in PopulationPyramidChart')
         }
     }
     
     useEffect(() => {
-        //TODO: move this somewhere else
         setRacialData(getWhiteAsianAndOtherData())
     }, [])
     
     useEffect(() => {
-        console.log('ducky1')
         getDataAndCreateChart()
         
     }, [racialData])

@@ -1,4 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-dupe-keys */
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 import { getBirthData } from '../../utility/getBirthData'
@@ -75,7 +79,7 @@ export const BirthDataChart = (props) => {
 
             const whichTypeToDisplay = selectedType === 'Total Births' ? "live_births" : (selectedType === 'Birth Rate' ? 'birth_rate' : 'fertility_rate') 
 
-            if (typeof myLineChart !== "undefined") myLineChart.destroy();
+            if (typeof myLineChart !== "undefined" && typeof myLineChart !== undefined) myLineChart.destroy();
             
             const yeet = new Chart(ctx, {
                 type: 'line',
