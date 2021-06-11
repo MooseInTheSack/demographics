@@ -75,9 +75,8 @@ export const SimpleTabs = () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div className="chartDiv">
-          <h3>Non-Hispanic White Population Pyramid 2020, Ages 0-29</h3>  
-          <PopulationPyramidChart type="popPyramid"/>
+        <div className="chartDivSmall">
+          <PopulationPyramidChart type="popPyramid" />
         </div>
 
       </TabPanel>

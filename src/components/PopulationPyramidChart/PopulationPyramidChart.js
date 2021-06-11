@@ -71,10 +71,28 @@ const populationPyramidOptions = {
                 const value = Number(c.value);
                 const positiveOnly = value < 0 ? -value : value;
                 let retStr = "";
-                if (c.datasetIndex === 0) {
-                retStr += `Male: ${positiveOnly.toString()}`;
-                } else {
-                retStr += `Female: ${positiveOnly.toString()}`;
+                switch(c.datasetIndex) {
+                    case 0:
+                        retStr = `White Male: ${positiveOnly.toString()}`
+                        break
+                    case 1:
+                        retStr = `Asian Male: ${positiveOnly.toString()}`
+                        break
+                    case 2:
+                        retStr = `Other Male: ${positiveOnly.toString()}`
+                        break
+                    case 3:
+                        retStr = `White Female: ${positiveOnly.toString()}`
+                        break
+                    case 4:
+                        retStr = `Asian Female: ${positiveOnly.toString()}`
+                        break
+                    case 5:
+                        retStr = `Other Female: ${positiveOnly.toString()}`
+                        break
+                    default:
+                        retStr = "Unkown"
+                        break
                 }
                 return retStr;
             },
@@ -128,45 +146,70 @@ const createDataset = (incomeBracketArray, label, barColor) => {
 
 export const PopulationPyramidChart = (props) => {
 
-    //const [ NHWData, setNHWData] = useState([])
     const [ myLineChart, setMyLineChart] = useState()
-    const [selectedRace, setSelectedRace ] = useState('')
     const [racialData, setRacialData ] = useState([])
-
-    const handleChange = (event) => {
-        setSelectedRace(event.target.value);
-    }
-
-    const selections = [
-        <MenuItem value={'NHW'}>Non-Hispanic White</MenuItem>,
-        <MenuItem value={'Asian'}>Asian</MenuItem>,
-        <MenuItem value={'Other'}>Other (Black, Hispanic, etc.)</MenuItem>,
-    ]
+    const [ chartColors ] = useState(colorCombos())
 
     const getDataAndCreateChart = () => {
-        var maleData, femaleData, datasets
-        
-        //TODO: move this somewhere else
-        setRacialData(getWhiteAsianAndOtherData())
+        var maleData, femaleData, datasets = []
         
         //make labels
         var labels = getCategoryNames(racialData, "Male")
-        maleData = convertDemoToChartFormat(racialData, selectedRace, "Male")
-        femaleData = convertDemoToChartFormat(racialData, selectedRace, "Female")
+
+        maleData = {
+            "NHW": convertDemoToChartFormat(racialData, "NHW", "Male"),
+            "Asian": convertDemoToChartFormat(racialData, "Asian", "Male"),
+            "Other": convertDemoToChartFormat(racialData, "Other", "Male"),
+        }
+
+        femaleData = {
+            "NHW": convertDemoToChartFormat(racialData, "NHW", "Female"),
+            "Asian": convertDemoToChartFormat(racialData, "Asian", "Female"),
+            "Other": convertDemoToChartFormat(racialData, "Other", "Female"),
+        }
+
+        console.log('ducky racialData: ', racialData)
+        console.log('ducky maleData: ', maleData)
 
         datasets = [
             {
-                label: "Male",
+                label: "Non-Hispanic White Males",
                 stack: "stack 0",
-                data: maleData && maleData.length > 0 ? maleData.map((k) => -k).reverse() : [],
-                backgroundColor: '#3765b0',
+                data: maleData["NHW"] && maleData["NHW"].length > 0 ? maleData["NHW"].map((k) => -k).reverse() : [],
+                backgroundColor: chartColors[0],
                 borderWidth: 1,
             },
             {
-                label: "Female",
+                label: "Asian Males",
+                stack: "stack 1",
+                data: maleData["Asian"] && maleData["Asian"].length > 0 ? maleData["Asian"].map((k) => -k).reverse() : [],
+                backgroundColor: chartColors[5],
+                borderWidth: 1,
+            },
+            {
+                label: "Other Males",
+                stack: "stack 2",
+                data: maleData["Other"] && maleData["Other"].length > 0 ? maleData["Other"].map((k) => -k).reverse() : [],
+                backgroundColor: chartColors[9],
+                borderWidth: 1,
+            },
+            {
+                label: "Non-Hispanic White Females",
                 stack: "stack 0",
-                data: femaleData && femaleData.length > 0 ? femaleData.reverse() : [],
-                backgroundColor: '#d41111',
+                data: femaleData["NHW"] && femaleData["NHW"].length > 0 ? femaleData["NHW"].reverse() : [],
+                backgroundColor: chartColors[0],
+            },
+            {
+                label: "Asian Females",
+                stack: "stack 1",
+                data: femaleData["Asian"] && femaleData["Asian"].length > 0 ? femaleData["Asian"].reverse() : [],
+                backgroundColor: chartColors[5],
+            },
+            {
+                label: "Other Females",
+                stack: "stack 2",
+                data: femaleData["Other"] && femaleData["Other"].length > 0 ? femaleData["Other"].reverse() : [],
+                backgroundColor: chartColors[9],
             }
         ]
         
@@ -185,27 +228,26 @@ export const PopulationPyramidChart = (props) => {
             })
 
             setMyLineChart(yeet)
-        }  
+        } else {
+            console.error('ducky problem')
+        }
     }
-
+    
     useEffect(() => {
-        setSelectedRace('NHW')
+        //TODO: move this somewhere else
+        setRacialData(getWhiteAsianAndOtherData())
     }, [])
     
     useEffect(() => {
+        console.log('ducky1')
         getDataAndCreateChart()
         
-    }, [selectedRace])
+    }, [racialData])
 
     return (
         <div>
-            <SimpleSelect 
-                data={selections}
-                selectedType={selectedRace}
-                handleChange={handleChange}
-            />
-            <canvas id={props.type} width="400" height="400" />
-
+            <h3>Population Pyramid Separated By Race</h3>
+            <canvas id={props.type} width="500" height="500" />
         </div>
     )
 }

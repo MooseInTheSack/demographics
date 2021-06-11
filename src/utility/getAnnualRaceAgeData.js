@@ -5,7 +5,6 @@ export const getAnnualRaceAgeData = () => {
 }
 
 export const getAnnualPopulation = (raceParam) => {
-    
     var keyword = ""
     var jsonData = ""
 

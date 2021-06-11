@@ -5,3 +5,12 @@
     padding-left: 300px;
     padding-right: 300px;
   }
+
+  .chartDivSmall {
+    text-align: center;
+    max-width: 50%;
+  }
+
+  .otherDiv {  
+    max-width: 90%;
+  }
