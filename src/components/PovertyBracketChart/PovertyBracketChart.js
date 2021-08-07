@@ -46,6 +46,10 @@ const createLabelsArray = (incomeBracketArray) => {
 export const PovertyBracketChart = (props) => {
     const [colorArray] = useState(colorCombos())
     const [myLineChart, setMyLineChart] = useState()
+    const [NHWData] = useState(getNHWPoverty())
+    const [hispanicData] = useState(getAllHispanicPoverty())
+    const [blackData] = useState(getBlackOnlyPoverty())
+    const [asianData] = useState(getAsianOnlyPoverty())
 
     useEffect(() => {
         const ctx = document.getElementById(props.type);
@@ -53,11 +57,11 @@ export const PovertyBracketChart = (props) => {
         //if total:
         if(props.type === "povertyData") {
             datasets = [
-                createDataset(getNHWPoverty(), "Non-Hispanic White Households", colorArray[0]),
+                createDataset(NHWData, "Non-Hispanic White Households", colorArray[0]),
                 //createDataset(AllWhitesData, "All White Households", colorArray[3]),
-                createDataset(getAllHispanicPoverty(), "Hispanic Households", colorArray[3]),
-                createDataset(getBlackOnlyPoverty(), "Black Households", colorArray[9]),
-                createDataset(getAsianOnlyPoverty(), "Asian Households", colorArray[5]),
+                createDataset(hispanicData, "Hispanic Households", colorArray[3]),
+                createDataset(blackData, "Black Households", colorArray[9]),
+                createDataset(asianData, "Asian Households", colorArray[5]),
             ]
         }
 
@@ -66,11 +70,11 @@ export const PovertyBracketChart = (props) => {
         setMyLineChart(new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: createLabelsArray(getNHWPoverty()),
+                labels: createLabelsArray(NHWData),
                 datasets: datasets
             },
         }))
-    }, [colorArray, myLineChart])
+    }, [NHWData])
     
     return (
         <div>
