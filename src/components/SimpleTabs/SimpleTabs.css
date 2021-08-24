@@ -1,14 +1,11 @@
 .chartDiv {
     text-align: center;
-    margin-top: 50px;
     margin-bottom: 50px;
-    padding-left: 300px;
-    padding-right: 300px;
-  }
-
-  .chartDivSmall {
-    text-align: center;
-    max-width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 60%;
+    margin: auto;
+    display: block;
   }
 
   .otherDiv {  

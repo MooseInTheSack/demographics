@@ -75,7 +75,9 @@ export const SimpleTabs = () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div className="chartDivSmall">
+        <div className="chartDiv">
+        <h5>Population Pyramid Separated By Race.</h5>
+
           <PopulationPyramidChart type="popPyramid" />
         </div>
 
@@ -83,13 +85,13 @@ export const SimpleTabs = () => {
       <TabPanel value={value} index={1}>
         <div>
           <div className="chartDiv">
-            <h3>Population by Race 2010-2019</h3>
+            <h5>Population by Race 2010-2019</h5>
               <DecadeLineChart type="total" />
           </div>
           <br />
           
           <div className="chartDiv">
-            <h3>Population as a Pecent of Total Inhabitants by Race</h3>
+            <h5>Population as a Pecent of Total Inhabitants by Race</h5>
               <DecadeLineChart type="percent" />
           </div>
         </div>
@@ -98,13 +100,13 @@ export const SimpleTabs = () => {
       <TabPanel value={value} index={2}>
         <div>
           <div className="chartDiv">
-            <h3>Total Number of Households in each Income Bracket by Race, 2019</h3>
+            <h5>Total Number of Households in each Income Bracket by Race, 2019</h5>
               <IncomeBracketChart type="totalIncome" />
           </div>
           <br />
 
           <div className="chartDiv">
-            <h3>Each Race as a Percent of the Total Respective Income Bracket, 2019</h3>
+            <h5>Each Race as a Percent of the Total Respective Income Bracket, 2019</h5>
               <IncomeBracketChart type="percentIncome" />
           </div>
           <br />
@@ -113,14 +115,14 @@ export const SimpleTabs = () => {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <div className="chartDiv">
-          <h3>Total Number of Individuals in Poverty by Age Range, 2020</h3>  
+          <h5>Total Number of Individuals in Poverty by Age Range, 2020</h5>  
           <PovertyBracketChart type="povertyData"/>
         </div>
 
       </TabPanel>
       <TabPanel value={value} index={4}>
         <div className="chartDiv">
-          <h3>Number of Births Each Year By Race, 1960 to 2019</h3>  
+          <h5>Number of Births Each Year By Race, 1960 to 2019</h5>  
           <BirthDataChart type="birthRate"/>
         </div>
 

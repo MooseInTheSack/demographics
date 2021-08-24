@@ -63,6 +63,7 @@ const populationPyramidOptions = {
     title: {
         display: true,
         text: "Data from April 2020, all numbers are in thousands",
+        
     },
     tooltips: {
         intersect: false,
@@ -243,7 +244,6 @@ export const PopulationPyramidChart = (props) => {
 
     return (
         <div>
-            <h3>Population Pyramid Separated By Race</h3>
             <canvas id={props.type} width="500" height="500" />
         </div>
     )
