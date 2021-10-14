@@ -5,6 +5,7 @@ import { colorCombos } from '../../utility/colorCombos'
 import { getWhiteAsianAndOtherData } from '../../utility/getPopulationPyramidData'
 import { SimpleSelect } from '../SimpleSelect/SimpleSelect';
 import { MenuItem } from '@material-ui/core';
+import './PopulationPyramidChart.css'
 
 const categoriesToCount = [
     "Under 5 years", 
@@ -247,7 +248,7 @@ export const PopulationPyramidChart = (props) => {
     return (
         <div>
             <h3>Population Pyramid Separated By Race</h3>
-            <canvas id={props.type} width="500" height="500" />
+            <canvas id={props.type} className="canvasContainer" />
         </div>
     )
 }

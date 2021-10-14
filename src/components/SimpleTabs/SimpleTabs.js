@@ -75,7 +75,7 @@ export const SimpleTabs = () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div className="chartDivSmall">
+        <div className="chartDiv">
           <PopulationPyramidChart type="popPyramid" />
         </div>
 

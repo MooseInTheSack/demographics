@@ -4,6 +4,7 @@ import { colorCombos } from '../../utility/colorCombos'
 import { getBirthData } from '../../utility/getBirthData'
 import { SimpleSelect } from '../SimpleSelect/SimpleSelect'
 import { MenuItem } from '@material-ui/core';
+import './BirthDataChart.css'
 
 const getDataForRace = (arr, raceName) => {
     if(raceName === "White" || raceName === "Black") {
@@ -129,7 +130,7 @@ export const BirthDataChart = (props) => {
                 handleChange={handleChange}
             />
             <br />
-            <canvas id={props.type} width="400" height="400" />
+            <canvas id={props.type} className="canvasContainer" />
         </div>
     )
 }

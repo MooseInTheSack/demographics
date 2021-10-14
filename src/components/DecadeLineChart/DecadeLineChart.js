@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 import { getAnnualPopulation } from '../../utility/getAnnualRaceAgeData'
+import './DecadeLineChart.css'
 
 const addAllHispanicData = () => {
     var allHispanics = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -136,7 +137,7 @@ export const DecadeLineChart = (props) => {
     
     return (
         <div>
-            <canvas id={props.type} width="400" height="400" />
+            <canvas id={props.type} className="canvasContainer" />
         </div>
     )
 }

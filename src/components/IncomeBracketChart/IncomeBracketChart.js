@@ -6,7 +6,7 @@ import { getIncomeBracketNonHispanicWhites } from "../../utility/usa_2019_income
 import { getIncomeBracketForBlackHouseholds } from "../../utility/usa_2019_income_bracket_black"
 import { getIncomeBracketForAsians } from "../../utility/usa_2019_income_bracket_asian"
 import { getIncomeBracketHispanic } from "../../utility/usa_2019_income_bracket_hispanic"
-
+import './IncomeBracketChart.css'
 
 const getIncomeBracketForTotalPopulation = (NHWData, hispanicData, blackData, asianData) => {
     var totalForEachBracket = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -133,7 +133,7 @@ export const IncomeBracketChart = (props) => {
     
     return (
         <div>
-            <canvas id={props.type} width="400" height="400" />
+            <canvas id={props.type} className="canvasContainer"  />
         </div>
     )
 }

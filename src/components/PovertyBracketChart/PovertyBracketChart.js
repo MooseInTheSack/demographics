@@ -7,6 +7,7 @@ import { getNHWPoverty } from '../../demographic-data/income/poverty/nhw_poverty
 import { getAllHispanicPoverty } from '../../demographic-data/income/poverty/all_hispanic_poverty'
 import { getBlackOnlyPoverty } from '../../demographic-data/income/poverty/black_only_poverty'
 import { getAsianOnlyPoverty } from '../../demographic-data/income/poverty/asian_only_poverty'
+import './PovertyBracketChart.css'
 
 const createDataset = (incomeBracketArray, label, barColor) => {
     var dataArray = []
@@ -79,7 +80,7 @@ export const PovertyBracketChart = (props) => {
     
     return (
         <div>
-            <canvas id={props.type} width="400" height="400" />
+            <canvas id={props.type} className="canvasContainer" />
         </div>
     )
 }
