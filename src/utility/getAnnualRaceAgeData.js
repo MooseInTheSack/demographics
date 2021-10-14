@@ -1,7 +1,6 @@
 export const getAnnualRaceAgeData = () => {
     const jsonData = require('../demographic-data/race_population_change/annual_est_by_age_and_sex_2010_to_2019.json')
-    //TODO: Stuff
-    return []
+    return jsonData
 }
 
 export const getAnnualPopulation = (raceParam) => {

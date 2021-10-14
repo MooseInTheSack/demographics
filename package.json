@@ -1,5 +1,6 @@
 {
   "name": "demographics",
+  "homepage": "http://demographics.fun",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

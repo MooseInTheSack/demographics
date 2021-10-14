@@ -1,4 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-dupe-keys */
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 import { getAnnualPopulation } from '../../utility/getAnnualRaceAgeData'
@@ -36,7 +38,7 @@ const addAllPopData = (arrayOfRacialData) => {
 export const DecadeLineChart = (props) => {
     
     const [racialData, setRacialData] = useState([])
-    const [myLineChart, setMyLineChart] = useState(null)
+    const [myLineChart, setMyLineChart] = useState()
     const [ chartColors ] = useState(colorCombos())
 
     useEffect( () => {
@@ -71,6 +73,8 @@ export const DecadeLineChart = (props) => {
 
     useEffect(() => {
         const ctx = document.getElementById(props.type);
+
+        if (typeof myLineChart !== "undefined" && typeof myLineChart !== undefined) myLineChart.destroy();
 
         setMyLineChart(new Chart(ctx, {
             type: 'line',

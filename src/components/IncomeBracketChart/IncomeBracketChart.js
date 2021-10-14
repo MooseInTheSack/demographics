@@ -1,4 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars*/
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 import { getIncomeBracketNonHispanicWhites } from "../../utility/usa_2019_income_bracket_non_hispanic_white.js"
@@ -69,7 +71,7 @@ export const IncomeBracketChart = (props) => {
     const [asianData] = useState(getIncomeBracketForAsians())
     const [hispanicData] = useState(getIncomeBracketHispanic())
     const [racialPercentageData, setRacialPercentageData] = useState([])
-    const [myLineChart, setMyLineChart] = useState(null)
+    const [myLineChart, setMyLineChart] = useState()
 
     useEffect(() => {
         const ctx = document.getElementById(props.type);
@@ -84,6 +86,7 @@ export const IncomeBracketChart = (props) => {
                 createDataset(asianData, "Asian Households", colorArray[5]),
             ]
         } else if(props.type === "percentIncome") {
+            
             setRacialPercentageData(getIncomeBracketForRacialPercentage(NHWData, hispanicData, blackData, asianData))
 
             const yeet = getIncomeBracketForRacialPercentage(NHWData, hispanicData, blackData, asianData)
@@ -121,6 +124,7 @@ export const IncomeBracketChart = (props) => {
             ]
         }
 
+        if (typeof myLineChart !== "undefined" && typeof myLineChart !== undefined) myLineChart.destroy();
 
         setMyLineChart(new Chart(ctx, {
             type: 'bar',

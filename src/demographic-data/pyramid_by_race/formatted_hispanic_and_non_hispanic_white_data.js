@@ -1079,18 +1079,6 @@ export const getData = () => {
           "Non-Hispanic High": "1,862",
           "Sex": "Female"
           
-        },
-        {
-          "Age": "",
-          "Year of Birth": "",
-          "Hispanic Low": "",
-          "Hispanic Middle": "",
-          "Hispanic High": "",
-          "Non-Hispanic Low": "",
-          "Non-Hispanic Middle": "",
-          "Non-Hispanic High": "",
-          "Sex": ""
-          
         }
       ]
 }
