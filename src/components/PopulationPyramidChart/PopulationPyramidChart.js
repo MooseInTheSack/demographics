@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { colorCombos } from '../../utility/colorCombos'
 import { getWhiteAsianAndOtherData } from '../../utility/getPopulationPyramidData'
-import { SimpleSelect } from '../SimpleSelect/SimpleSelect';
-import { MenuItem } from '@material-ui/core';
 import './PopulationPyramidChart.css'
 
 const categoriesToCount = [
